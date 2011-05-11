@@ -1,0 +1,53 @@
+h1. AMQP and STOMP interoperability using Ruby and RabbitMQ STOMP plugin
+
+This is an example of RabbitMQ STOMP plugin in action. It has two parts:
+
+ * A Ruby STOMP producer that connects to default RabbitMQ STOP plugin endpoint and publishes a couple of hundred messages.
+ * A Ruby AMQP consumer that subscribes to messages from STOMP producer.
+
+
+h2. Getting started
+
+Pre-requisites are
+
+ * Having a RabbitMQ 2.4+ installed. See "RabbitMQ installation guide":http://www.rabbitmq.com/install.html and "downloads":http://www.rabbitmq.com/download.html. On Mac OS X we recommend you use "Homebrew":http://mxcl.github.com/homebrew/ and brew install rabbitmq.
+ * Having a RabbitMQ STOMP plugin 2.4+ installed. See "STOMP plugin page":http://www.rabbitmq.com/stomp.html.
+
+
+The whole thing is managed using Bundler, so
+
+    gem install bundler
+
+and then, from Git repository root
+
+    bundle install --local
+
+Finally, lets run both scripts (from two shells), consumer first:
+
+    bundle exec ruby ./script/amqp_consumer.rb
+
+and then producer
+
+		bundle exec ruby ./script/stomp_producer.rb
+
+
+h2. Libraries used
+
+ * "amqp Ruby gem":https://github.com/ruby-amqp/amqp 0.8.0
+ * "Ruby STOMP client":http://gitorious.org/stomp
+
+h2. License
+
+Copyright (c) 2011, Michael S. Klishin
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
