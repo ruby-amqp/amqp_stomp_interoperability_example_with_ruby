@@ -14,7 +14,7 @@ Pre-requisites are
  * Having a RabbitMQ STOMP plugin 2.4+ installed. See "STOMP plugin page":http://www.rabbitmq.com/stomp.html.
 
 
-The whole thing is managed using Bundler, so
+The whole thing is managed using "Bundler":http://gembundler.com/, so
 
 <pre>gem install bundler</pre>
 
