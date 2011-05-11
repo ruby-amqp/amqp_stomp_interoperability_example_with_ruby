@@ -16,19 +16,19 @@ Pre-requisites are
 
 The whole thing is managed using Bundler, so
 
-    gem install bundler
+<pre>gem install bundler</pre>
 
 and then, from Git repository root
 
-    bundle install --local
+<pre>bundle install --local</pre>
 
 Finally, lets run both scripts (from two shells), consumer first:
 
-    bundle exec ruby ./script/amqp_consumer.rb
+<pre>bundle exec ruby ./script/amqp_consumer.rb</pre>
 
 and then producer
 
-		bundle exec ruby ./script/stomp_producer.rb
+<pre>bundle exec ruby ./script/stomp_producer.rb</pre>
 
 
 h2. Libraries used
