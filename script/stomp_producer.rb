@@ -6,7 +6,7 @@
 # See http://gitorious.org/stomp
 
 
-require 'rubygems'
+Bundler.setup
 require 'stomp'
 
 client = Stomp::Client.new("failover://(stomp://guest:guest@localhost:61613,stomp://:@remotehost:61613)?initialReconnectDelay=5000&randomize=false&useExponentialBackOff=false")

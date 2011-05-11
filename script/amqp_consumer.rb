@@ -1,8 +1,6 @@
 #!/usr/bin/env ruby
 
-require "rubygems"
-
-gem "amqp", "~> 0.8.0.rc9"
+Bundler.setup
 require "amqp"
 
 puts "Using AMQP gem #{AMQP::VERSION}"
