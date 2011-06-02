@@ -5,6 +5,10 @@ This is an example of RabbitMQ STOMP plugin in action. It has two parts:
  * A Ruby STOMP producer that connects to default RabbitMQ STOP plugin endpoint and publishes a couple of hundred messages.
  * A Ruby AMQP consumer that subscribes to messages from STOMP producer.
 
+h2. Libraries used
+
+ * "Ruby amqp gem":http://github.com/ruby-amqp/amqp 0.8.0
+ * "Ruby STOMP client":http://gitorious.org/stomp
 
 h2. Getting started
 
