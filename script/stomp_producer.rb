@@ -9,14 +9,12 @@
 Bundler.setup
 require 'stomp'
 
-client = Stomp::Client.new("failover://(stomp://guest:guest@localhost:61613,stomp://:@remotehost:61613)?initialReconnectDelay=5000&randomize=false&useExponentialBackOff=false")
+client = Stomp::Client.new("stomp://guest:guest@localhost:61613")
 message = ARGV[0] || "A sample message"
 
 300.times do |i|
-  puts "Sending message"
-  client.publish("/queue/amqpgem_stomp_interoperability", "#{i}: #{message}", { :persistent => true })
-  puts "(#{Time.now}) Message sent: #{i}"
-  sleep 1
+  client.publish("/queue/amqpgem_stomp_interoperability", "#{i}: #{message}")
+  puts "(#{Time.now}) Messages sent: #{i}"
 end
 
 

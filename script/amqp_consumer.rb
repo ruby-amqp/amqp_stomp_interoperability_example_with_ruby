@@ -1,24 +1,16 @@
 #!/usr/bin/env ruby
 
 Bundler.setup
-require "amqp"
+require "Bunny"
 
-puts "Using AMQP gem #{AMQP::VERSION}"
+puts "Using Bunny #{Bunny::VERSION}"
 
-AMQP.start do |session|
-  q = AMQP.channel.queue("amqpgem_stomp_interoperability", :durable => true)
-  q.subscribe do |header, payload|
-    puts "#{payload} => amqpgem_stomp_interoperability queue"
-  end
+conn = Bunny.new
+conn.start
 
+ch   = conn.create_channel
+q    = ch.queue("amqpgem_stomp_interoperability", durable: true)
 
-  show_stopper = Proc.new {
-    q.delete
-    session.close do
-      EventMachine.stop
-    end
-  }
-
-  Signal.trap "TERM", &show_stopper
-  Signal.trap "INT",  &show_stopper
+q.subscribe(block: true) do |_, _, payload|
+  puts "#{payload} => amqpgem_stomp_interoperability queue"
 end
