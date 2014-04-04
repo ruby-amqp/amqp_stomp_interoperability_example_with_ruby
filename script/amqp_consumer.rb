@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 Bundler.setup
-require "Bunny"
+require "bunny"
 
 puts "Using Bunny #{Bunny::VERSION}"
 
