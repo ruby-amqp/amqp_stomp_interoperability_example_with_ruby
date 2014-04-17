@@ -8,7 +8,7 @@ This is an example of RabbitMQ STOMP plugin in action. It has two parts:
 ## Libraries used
 
  * [Bunny](http://rubybunny.info)
- * [Ruby STOMP client](http://gitorious.org/stomp)
+ * [Ruby STOMP client](https://github.com/stompgem/stomp)
 
 ## Getting started
 
